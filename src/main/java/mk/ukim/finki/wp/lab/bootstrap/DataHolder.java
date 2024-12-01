@@ -37,8 +37,8 @@ public class DataHolder implements CommandLineRunner {
             categoryRepository.save(category3);
             categoryRepository.save(category4);
             categoryRepository.save(category5);
+            System.out.println("Categories saved");
         }
-
 
         if (locationRepository.count() == 0) {
             Location location1 = new Location("Skopje City Park", "Skopje, Macedonia", "100", "Beautiful park with green spaces and open-air venues.");
@@ -52,8 +52,8 @@ public class DataHolder implements CommandLineRunner {
             locationRepository.save(location3);
             locationRepository.save(location4);
             locationRepository.save(location5);
+            System.out.println("Locations saved");
         }
-
 
         if (eventRepository.count() == 0) {
             Event event1 = new Event("Summer Music Festival", "Outdoor music festival featuring local bands and international artists.", 1.00, categoryRepository.findById(1L).orElse(null), locationRepository.findById(1L).orElse(null));
@@ -67,6 +67,7 @@ public class DataHolder implements CommandLineRunner {
             eventRepository.save(event3);
             eventRepository.save(event4);
             eventRepository.save(event5);
+            System.out.println("Events saved");
         }
     }
 }
