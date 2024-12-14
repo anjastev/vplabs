@@ -24,7 +24,7 @@ public class Location {
 
     private String description;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     private List<Event> events;
 
     public Location(String name, String address, String capacity, String description) {

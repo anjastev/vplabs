@@ -112,25 +112,33 @@
                 </label>
 
                 <div class="event-actions">
-                    <a th:href="@{/events/edit-form/{id}(id=${event.id})}" class="btn btn-warning btn-sm">
+                    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}"
+                       th:href="@{/events/edit-form/{id}(id=${event.id})}"
+                       class="btn btn-warning btn-sm">
                         <i class="fa fa-edit"></i> Edit
                     </a>
-                    <a th:href="@{/events/delete/{id}(id=${event.id})}" class="btn btn-danger btn-sm">
+                    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}"
+                       th:href="@{/events/delete/{id}(id=${event.id})}"
+                       class="btn btn-danger btn-sm">
                         <i class="fa fa-trash"></i> Delete
                     </a>
                 </div>
+
             </div>
         </div>
 
         <div class="col mb-3">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <a href="/events/add-form" class="btn btn-block btn-dark add-product-btn">
+                    <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}"
+                       href="/events/add-form"
+                       class="btn btn-block btn-dark add-product-btn">
                         Add new event
                     </a>
                 </div>
             </div>
         </div>
+
         <br/><br/>
 
         <div class="form-group">
