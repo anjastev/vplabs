@@ -150,6 +150,11 @@
             <input type="submit" class="btn btn-sm btn-warning" value="Submit"/>
         </div>
     </form>
+
+    <form th:action="@{/logout}" th:method="POST">
+        <button type="submit" class="btn btn-danger">Log Out</button>
+    </form>
+
 </main>
 </body>
 </html>
