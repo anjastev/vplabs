@@ -15,6 +15,7 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 public class SecurityConfig {
 
 
+
     @Bean
     public DefaultSecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -43,9 +44,9 @@ public class SecurityConfig {
         AuthenticationManagerBuilder authManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authManagerBuilder.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
-                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
+                .withUser("admin").password(passwordEncoder().encode("admin1107")).roles("ADMIN")
                 .and()
-                .withUser("user").password(passwordEncoder().encode("user123")).roles("USER");
+                .withUser("user").password(passwordEncoder().encode("user1107")).roles("USER");
         return authManagerBuilder.build();
     }
 
